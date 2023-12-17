@@ -1,0 +1,23 @@
+<h4>List</h4>
+
+<ul class='list-group'>
+  <li
+    *ngFor='let character of characterList; index as i;
+    first as isFirst;
+    last as isLast;
+    odd as isOdd;
+    even as isEven;'
+    [ngClass]='{
+      "list-group-item-primary": isEven,
+      "list-group-item-dark": isLast
+    }'
+    class='list-group-item'
+  >
+    <div>
+      <span class='text-primary'>{{ i + 1 }}. </span>
+      <span>{{ character.name }} - </span>
+      <strong>Power: </strong>
+      <span>{{ character.power }}</span>
+    </div>
+  </li>
+</ul>

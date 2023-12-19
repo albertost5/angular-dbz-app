@@ -3,15 +3,13 @@
 <ul class='list-group'>
   <li
     *ngFor='let character of characterList; index as i;
-    first as isFirst;
     last as isLast;
-    odd as isOdd;
     even as isEven;'
     [ngClass]='{
       "list-group-item-primary": isEven,
       "list-group-item-dark": isLast
     }'
-    class='list-group-item'
+    class='list-group-item d-flex justify-content-between'
   >
     <div>
       <span class='text-primary'>{{ i + 1 }}. </span>
@@ -19,5 +17,6 @@
       <strong>Power: </strong>
       <span>{{ character.power }}</span>
     </div>
+    <button (click)='onDeleteCharacter(i)' class='btn btn-danger'>X</button>
   </li>
 </ul>

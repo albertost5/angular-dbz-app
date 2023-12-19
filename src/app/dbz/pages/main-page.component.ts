@@ -9,7 +9,15 @@ import {Character} from '../interfaces/character.interface';
 export class MainPageComponent {
   public characters: Character[] = [
     {name: 'Goku', power: 1000},
-    {name: 'Vegeta', power: 500},
-    {name: 'Piccolo', power: 400}
+    {name: 'Vegetta', power: 700},
+    {name: 'Freezer', power: 750}
   ]
+
+  addCharacterToList(char: Character): void {
+    this.characters.push(char);
+  }
+
+  deleteCharFromList(index: number): void {
+    this.characters = this.characters.filter((char, idx) => idx !== index);
+  }
 }
